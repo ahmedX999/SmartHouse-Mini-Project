@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <h3 class="text-center">Categories </h3>
+  <br>
+  <div class="mt-5">
+    <form class="d-flex justify-content-center" (ngSubmit)="ngSubmit()">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" name="labelle" placeholder="Labelle" [(ngModel)]="categories.labelle">
+        <button type="submit" class="btn btn-success">Add</button>
+      </div>
+    </form>
+  </div>
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Labelle</th>
+        <th scope="col">Appareils</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categories of categorie">
+        <td>{{categories.id}}</td>
+        <td>{{categories.labelle}}</td>
+        <td>
+          <span *ngFor="let appareil of appareil">{{ appareil.labelle }}, </span>
+        </td>
+        <td>
+          <button (click)="deleteCategorie(categories.id)" class="btn btn-danger me-2">Delete</button>
+          <button (click)="updateCategorie(categories.id)" class="btn btn-secondary">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

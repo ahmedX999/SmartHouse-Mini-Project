@@ -1,0 +1,59 @@
+<!-- Your HTML code -->
+<div class="container mt-5">
+  <h3 class="text-center mb-4">Appareils </h3>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <form class="mb-4" name="registerForm" (ngSubmit)="ngSubmit()">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Label" [(ngModel)]="appareils.labelle" name="labelle">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Description" [(ngModel)]="appareils.description" name="description">
+        </div>
+        <div class="mb-3">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-success" [ngClass]="{'active': appareils.state === true}" (click)="appareils.state = true">On</button>
+            <button type="button" class="btn btn-danger" [ngClass]="{'active': appareils.state === false}" (click)="appareils.state = false">Off</button>
+          </div>
+        </div>
+        <div class="mb-3">
+          <select class="form-select" [(ngModel)]="appareils.categories" name="categories">
+            <option value="" disabled selected>Select a category</option>
+            <option *ngFor="let category of categorie" [value]="category.id">{{ category.id }} - {{ category.labelle }}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!appareils.labelle || !appareils.description">Add</button>
+        <p *ngIf="!appareils.labelle || !appareils.description" class="text-danger">Please fill in all fields</p>
+      </form>
+    </div>
+  
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Label</th>
+            <th scope="col">Description</th>
+            <th scope="col">State</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appareils of appareil">
+            <td>{{ appareils.id }}</td>
+            <td>{{ appareils.labelle }}</td>
+            <td>{{ appareils.description }}</td>
+            <td>
+              <span [ngStyle]="{'color': appareils.state ? 'green' : 'red'}">{{ appareils.state ? 'On' : 'Off' }}</span>
+            </td>
+            <td>
+              <button class="btn btn-danger me-2" (click)="deleteAppareil(appareils.id)">Delete</button>
+              <button class="btn btn-secondary" (click)="updateAppareils(appareils.id)">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

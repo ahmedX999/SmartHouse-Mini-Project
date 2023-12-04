@@ -1,0 +1,36 @@
+.container {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    margin-right: 10px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    margin-right: 10px;
+}
+/* Custom CSS styles */
+.btn.btn-success.active,
+.btn.btn-danger.active {
+  background-color: rgba(121, 121, 121, 0.39); /* Change this color to your preferred color */
+  /* Additional styles if needed */
+}

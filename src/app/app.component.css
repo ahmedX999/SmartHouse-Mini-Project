@@ -1,0 +1,36 @@
+/* FILEPATH: /C:/Users/mariam/Documents/5IIR/JEE/ang/smarthouse/src/app/app.component.css */
+
+.navbar {
+    background-color: #000000;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-size: 18px;
+}
+
+.navbar-toggler:hover {
+    color: #ffffff;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #9e9c9c;
+}
